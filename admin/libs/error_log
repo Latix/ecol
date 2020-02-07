@@ -1,0 +1,66 @@
+[20-Dec-2019 23:31:04 UTC] PHP Warning:  require(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:31:04 UTC] PHP Fatal error:  require(): Failed opening required './assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:31:29 UTC] PHP Warning:  require(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:31:29 UTC] PHP Fatal error:  require(): Failed opening required './assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:31:51 UTC] PHP Fatal error:  Cannot redeclare Mail::MailNotificationOrders() in /home2/domarket/public_html/assets/libs/mail/mail.php on line 34
+[20-Dec-2019 23:32:19 UTC] PHP Warning:  require(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:32:19 UTC] PHP Fatal error:  require(): Failed opening required './assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:32:22 UTC] PHP Warning:  require(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:32:22 UTC] PHP Fatal error:  require(): Failed opening required './assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:34:46 UTC] PHP Warning:  require(../assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:34:46 UTC] PHP Fatal error:  require(): Failed opening required '../assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:35:00 UTC] PHP Warning:  require(../assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:35:00 UTC] PHP Fatal error:  require(): Failed opening required '../assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:04 UTC] PHP Warning:  require(../../../assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:04 UTC] PHP Fatal error:  require(): Failed opening required '../../../assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:26 UTC] PHP Warning:  include(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:26 UTC] PHP Warning:  include(): Failed opening './assets/libs/mail/mail.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:47 UTC] PHP Warning:  include(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:47 UTC] PHP Warning:  include(): Failed opening './assets/libs/mail/mail.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:47 UTC] PHP Fatal error:  Uncaught Error: Class 'Mail' not found in /home2/domarket/public_html/admin/libs/updateorderstatus.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[20-Dec-2019 23:36:51 UTC] PHP Warning:  include(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:51 UTC] PHP Warning:  include(): Failed opening './assets/libs/mail/mail.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:36:51 UTC] PHP Fatal error:  Uncaught Error: Class 'Mail' not found in /home2/domarket/public_html/admin/libs/updateorderstatus.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[20-Dec-2019 23:37:37 UTC] PHP Warning:  require(./assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[20-Dec-2019 23:37:37 UTC] PHP Fatal error:  require(): Failed opening required './assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[21-Dec-2019 08:56:44 UTC] PHP Fatal error:  Cannot redeclare Mail::MailNotificationOrders() in /home2/domarket/public_html/assets/libs/mail/mail.php on line 34
+[21-Dec-2019 08:57:10 UTC] PHP Fatal error:  Cannot redeclare Mail::MailNotificationOrders() in /home2/domarket/public_html/assets/libs/mail/mail.php on line 34
+[21-Dec-2019 08:57:46 UTC] PHP Fatal error:  Cannot redeclare Mail::MailNotificationOrders() in /home2/domarket/public_html/assets/libs/mail/mail.php on line 34
+[21-Dec-2019 08:59:53 UTC] PHP Fatal error:  Cannot redeclare Mail::MailNotificationOrders() in /home2/domarket/public_html/assets/libs/mail/mail.php on line 34
+[21-Dec-2019 13:09:11 UTC] PHP Warning:  require(../assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[21-Dec-2019 13:09:11 UTC] PHP Fatal error:  require(): Failed opening required '../assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[21-Dec-2019 13:13:15 UTC] PHP Notice:  Undefined variable: conn in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[21-Dec-2019 13:13:15 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home2/domarket/public_html/admin/libs/updateorderstatus.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[21-Dec-2019 13:13:36 UTC] PHP Notice:  Undefined variable: conn in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[21-Dec-2019 13:13:36 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home2/domarket/public_html/admin/libs/updateorderstatus.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[21-Dec-2019 13:14:17 UTC] PHP Notice:  Undefined variable: conn in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[21-Dec-2019 13:14:17 UTC] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home2/domarket/public_html/admin/libs/updateorderstatus.php:3
+Stack trace:
+#0 {main}
+  thrown in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 3
+[21-Dec-2019 14:17:09 UTC] PHP Warning:  include(./core/config/initialize.php): failed to open stream: No such file or directory in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:17:09 UTC] PHP Warning:  include(): Failed opening './core/config/initialize.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:39:05 UTC] PHP Warning:  include(./core/config/initialize.php): failed to open stream: No such file or directory in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:39:05 UTC] PHP Warning:  include(): Failed opening './core/config/initialize.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:39:38 UTC] PHP Warning:  include(./core/config/initialize.php): failed to open stream: No such file or directory in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:39:38 UTC] PHP Warning:  include(): Failed opening './core/config/initialize.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:40:03 UTC] PHP Warning:  include(./core/config/initialize.php): failed to open stream: No such file or directory in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:40:03 UTC] PHP Warning:  include(): Failed opening './core/config/initialize.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:40:05 UTC] PHP Warning:  include(./core/config/initialize.php): failed to open stream: No such file or directory in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:40:05 UTC] PHP Warning:  include(): Failed opening './core/config/initialize.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:40:19 UTC] PHP Warning:  include(./core/config/initialize.php): failed to open stream: No such file or directory in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:40:19 UTC] PHP Warning:  include(): Failed opening './core/config/initialize.php' for inclusion (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/assets/libs/mainOpt.php on line 2
+[21-Dec-2019 14:47:20 UTC] PHP Warning:  require_once(../assets/libs/mail/mail.php): failed to open stream: No such file or directory in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2
+[21-Dec-2019 14:47:20 UTC] PHP Fatal error:  require_once(): Failed opening required '../assets/libs/mail/mail.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home2/domarket/public_html/admin/libs/updateorderstatus.php on line 2

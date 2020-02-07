@@ -1,0 +1,70 @@
+.text-center
+{
+    text-align: center;
+}
+
+.hide
+{
+	display: none;
+}
+
+.mt-text
+{
+	margin-top: 10px; 
+}
+
+.label-text
+{
+	font-size: 14px;
+}
+
+.ml-checkbox-text
+{
+	margin-left: 5px;
+}
+
+.hide-step-text
+{
+	display: inline-block;
+}
+
+.head-text
+{
+	display: none;
+}
+
+.wizard > .content > .body
+{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 95%;
+	padding: 2.5%;
+}
+
+@media (max-width: 768px) {
+	.hide-step-text
+	{
+		display: none;
+	}
+
+	.head-text
+	{
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	.wizard > .content > .body
+	{
+		position: relative;
+		float: left;
+		width: 100%;
+		height: 95%;
+		padding: 5%;
+	}
+
+	.features-section
+	{
+		padding: 10px;
+	}
+}

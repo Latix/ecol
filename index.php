@@ -1,0 +1,1 @@
+<a href="admin/dashboard.php">Dashboard</a>
