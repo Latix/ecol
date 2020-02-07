@@ -1,7 +1,12 @@
 (function ($) {
     'use strict';
-    var form       = $("#property-form");
-    var form_data  = new FormData();
+    var form            = $("#property-form");
+    var edit_form       = $("#edit-property-form");
+    var form_data       = new FormData();
+
+    /**
+    * New Form Wizard
+    */
     form.children("div").steps({
         headerTag: "h3",
         bodyTag: "section",
@@ -17,7 +22,7 @@
             for (var index = 0; index < totalFiles; index++) {
                 form_data.append("img[]", $('#file'+index)[0].files[0]);
             }
-            form_data.append('title',             $('.title').val());
+            form_data.append('title',             $('#title').val());
             form_data.append('price',             $('.price').val());
             form_data.append('description',       $('.description').val());
             form_data.append('location',          $('.location').val());
@@ -64,47 +69,70 @@
         }
     });
 
-    var validationForm = $("#example-validation-form");
-    validationForm.val({
-        errorPlacement: function errorPlacement(error, element) {
-            element.before(error);
-        },
-        rules: {
-            confirm: {
-                equalTo: "#password"
+    /**
+    * Edit Form Wizard
+    */
+    edit_form.children("div").steps({
+        headerTag: "h3",
+        bodyTag: "section",
+        transitionEffect: "slideLeft",
+        onFinished: function (event, currentIndex) {
+            var features = $('.checkbox:checked').map(function() {
+                return this.value;
+            }).get();
+
+            var featuresList =  features.join(', ');
+            var totalFiles   = $('.files').length;
+
+            for (var index = 0; index < totalFiles; index++) {
+                form_data.append("img[]", $('#file'+index)[0].files[0]);
             }
-        }
-    });
+            form_data.append('propertyID',        $('#propertyID').val());
+            form_data.append('title',             $('#title').val());
+            form_data.append('price',             $('.price').val());
+            form_data.append('description',       $('.description').val());
+            form_data.append('location',          $('.location').val());
+            form_data.append('address',           $('.address').val());
+            form_data.append('property_type',     $('.property_type').val());
+            form_data.append('status',            $('.status').val());
+            form_data.append('beds',              $('.beds').val());
+            form_data.append('baths',             $('.baths').val());
+            form_data.append('area',              $('.area').val());
+            form_data.append('garages',           $('.garages').val());
+            form_data.append('img_file1',         $('.img_file1').val());
+            form_data.append('img_file2',         $('.img_file2').val());
+            form_data.append('img_file3',         $('.img_file3').val());
+            form_data.append('features',          featuresList);
 
-    validationForm.children("div").steps({
-        headerTag: "h3",
-        bodyTag: "section",
-        transitionEffect: "slideLeft",
-        onStepChanging: function (event, currentIndex, newIndex) {
-            validationForm.val({
-                ignore: [":disabled",":hidden"]
-            })
-            return validationForm.val();
-        },
-        onFinishing: function (event, currentIndex) {
-            validationForm.val({
-                ignore: [':disabled']
-            })
-            return validationForm.val();
-        },
-        onFinished: function (event, currentIndex) {
-            alert("Submitted!");
-        }
-    });
-
-    var verticalForm = $("#example-vertical-wizard");
-    verticalForm.children("div").steps({
-        headerTag: "h3",
-        bodyTag: "section",
-        transitionEffect: "slideLeft",
-        stepsOrientation: "vertical",
-        onFinished: function (event, currentIndex) {
-            alert("Submitted!");
+            $.ajax({
+                url: 'ajax/edit-data.php',
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                method: 'POST',
+                success: function(data) {
+                    console.log(data);
+                    if (data == 'success') {
+                        swal({
+                          title: 'Success!',
+                          text: 'Your property has been updated',
+                          icon: 'success',
+                        }).then(
+                            function () {}
+                        );
+                    } else {
+                        swal({
+                          title: 'Error!',
+                          text: 'Your property has not been updated',
+                          icon: 'error',
+                          button: false
+                        }).then(
+                            function () {}
+                        );
+                    }
+                }
+            });
         }
     });
 })(jQuery);

@@ -8,23 +8,12 @@ checkAccess();
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <?php include 'libs/head.php'; ?>
 </head>
-
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.php -->
-    <!-- partial:partials/_navbar.html -->
-    <?php
-          include('libs/navTopBar.php');
-    ?>
-
-    <!-- partial -->
+    <?php include('libs/navTopBar.php'); ?>
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
       <?php include('libs/navTopBarRight.php') ?>
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
       <?php include('libs/sideBar.php'); ?>
-      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
             <div class="row">
@@ -269,56 +258,16 @@ checkAccess();
 					                    </div>
 				                    </section>
 			                    </div>
-		                    </div> <!-- form -->
+		                    </div> 
  				        </div>
-				        <!-- End -->
 		            </div>
 	            </div>
           	</div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.php -->
         <?php include('libs/footer.php'); ?>
-        <!-- partial -->
+        <?php include('libs/javascript.php'); ?>
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <script src="node_modules/jquery-steps/build/jquery.steps.min.js"></script>
-  <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
-  <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="node_modules/jquery.avgrund/jquery.avgrund.min.js"></script>
-  <!-- <script src="node_modules/dropzone/dist/dropzone.js"></script> -->
-  <script src="js/dropzone.js"></script>
-  <script src="js/alerts.js"></script>
-  <script src="js/avgrund.js"></script>
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/misc.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/wizard.js"></script>
-  <!-- End custom js for this page-->
-  <script type="text/javascript">
-  	$(document).ready(function() {
-		Dropzone.options.imageUpload = {
-	        maxFilesize:1,
-	        acceptedFiles: ".jpeg,.jpg,.png,.gif"
-	    };
-  	});
-  </script>
 </body>
 </html>

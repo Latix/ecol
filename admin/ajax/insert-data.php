@@ -8,7 +8,6 @@ $property 	 = new Property();
 $uploadImage = new UploadImage();
 
 if (isset($_POST['title'])){
-    // var_dump($_FILES); exit;
   if (isset($_SESSION['admin_id'])){
         $price 	  = (float) str_replace(',', '', $_POST['price']);
         // $features = (isset($_POST['features'])) ? implode(", ", $_POST['features']) : '';

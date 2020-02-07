@@ -10,18 +10,10 @@ checkAccess();
 </head>
 <body>
   <div class="container-scroller">
-    <!-- partial:partials/_navbar.php -->
-    <?php
-         include('libs/navTopBar.php');
-    ?>
-    <!-- partial -->
+    <?php include('libs/navTopBar.php'); ?>
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.php -->
       <?php include('libs/navTopBarRight.php') ?>
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.php -->
       <?php include('libs/sideBar.php') ?>
-      <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
@@ -85,41 +77,10 @@ checkAccess();
             </div>
           </div>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.php -->
         <?php include('libs/footer.php'); ?>
-        <!-- partial -->
+        <?php include('libs/javascript.php'); ?>
       </div>
-      <!-- main-panel ends -->
     </div>
-    <!-- page-body-wrapper ends -->
   </div>
-  <!-- container-scroller -->
-
-  <!-- plugins:js -->
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
-  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-  <script src="node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-  
-  <!-- endinject -->
-  <!-- Plugin js for this page-->
-  <script src="node_modules/raphael/raphael.min.js"></script>
-  <script src="node_modules/morris.js/morris.min.js"></script>
-  <script src="node_modules/jquery-sparkline/jquery.sparkline.min.js"></script>
-  <script src="node_modules/chartist/dist/chartist.min.js"></script>
-  <script src="node_modules/chart.js/dist/Chart.min.js"></script>
-  <script src="node_modules/jvectormap/jquery-jvectormap.min.js"></script>
-  <script src="node_modules/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="node_modules/jquery-steps/build/jquery.steps.min.js"></script>
-  <script src="node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
-  <!-- End plugin js for this page-->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/misc.js"></script>
-  <script src="js/settings.js"></script>
-  <script src="js/todolist.js"></script>
-  <!-- endinject -->
 </body>
 </html>

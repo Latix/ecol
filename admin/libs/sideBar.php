@@ -11,7 +11,7 @@
         </div>
       </div>
     </li>
-    <li class="nav-item"> <a class="nav-link" href="dashboard"> <img class="menu-icon" src="images/menu_icons/menu_dash.png" alt="menu icon"> <span class="menu-title">Dashboard</span></a> </li>
+    <li class="nav-item"> <a class="nav-link" href="dashboard.php"> <img class="menu-icon" src="images/menu_icons/menu_dash.png" alt="menu icon"> <span class="menu-title">Dashboard</span></a> </li>
     <li class="nav-item"> <a class="nav-link" href="../"> <img class="menu-icon" src="images/menu_icons/menu_home.png" alt="menu icon"> <span class="menu-title">Home</span></a> </li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements"> <img class="menu-icon" src="images/menu_icons/menu_upload.png" alt="menu icon"> <span class="menu-title">Properties</span><i class="menu-arrow"></i></a>
