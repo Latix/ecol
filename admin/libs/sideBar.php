@@ -14,16 +14,21 @@
     <li class="nav-item"> <a class="nav-link" href="dashboard.php"> <img class="menu-icon" src="images/menu_icons/menu_dash.png" alt="menu icon"> <span class="menu-title">Dashboard</span></a> </li>
     <li class="nav-item"> <a class="nav-link" href="../"> <img class="menu-icon" src="images/menu_icons/menu_home.png" alt="menu icon"> <span class="menu-title">Home</span></a> </li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements"> <img class="menu-icon" src="images/menu_icons/menu_upload.png" alt="menu icon"> <span class="menu-title">Properties</span><i class="menu-arrow"></i></a>
-      <div class="collapse" id="form-elements">
+      <a class="nav-link" data-toggle="collapse" href="#property" aria-expanded="false" aria-controls="property"> <img class="menu-icon" src="images/menu_icons/menu_upload.png" alt="menu icon"> <span class="menu-title">Properties</span><i class="menu-arrow"></i></a>
+      <div class="collapse" id="property">
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"><a class="nav-link" href="new-property.php">Add Property</a></li>
             <li class="nav-item"> <a class="nav-link" href="view-property.php">View Properties</a></li>
         </ul>
       </div>
     </li>
-     <li class="nav-item"> <a class="nav-link" href="#"> 
-      <img class="menu-icon" src="images/menu_icons/menu_dash.png" alt="menu icon"> <span class="menu-title">Settings</span></a> 
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#profile" aria-expanded="false" aria-controls="property"> <img class="menu-icon" src="images/menu_icons/menu_dash.png" alt="menu icon"> <span class="menu-title">Settings</span><i class="menu-arrow"></i></a>
+      <div class="collapse" id="profile">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="profile.php">Profile</a></li>
+        </ul>
+      </div>
     </li>
     <li class="nav-item"> <a class="nav-link" href="?action=logout"> 
       <img class="menu-icon" src="images/menu_icons/menu_logout.png" alt="menu icon"> <span class="menu-title">Logout</span></a> 

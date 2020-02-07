@@ -6,7 +6,7 @@ class UploadImage extends Fetch{
     function upload($file, $location=''){
         $hostName           = $_SERVER['HTTP_HOST'];
         $protocol           = (stripos($_SERVER['SERVER_PROTOCOL'], 'https') === 0) ? "https://" : "http://";
-        $targetDir          = 'images/products/'.$location;
+        $targetDir          = 'images/property/'.$location;
         $word               = str_shuffle("abcmdefnsqwqwewrtypinasmxzhfdldzxbbn");
         $fileName           = $file['name'];
         $newName            = time().$word.$fileName;
