@@ -119,7 +119,9 @@
                           text: 'Your property has been updated',
                           icon: 'success',
                         }).then(
-                            function () {}
+                            function () {
+                                location.reload();
+                            }
                         );
                     } else {
                         swal({

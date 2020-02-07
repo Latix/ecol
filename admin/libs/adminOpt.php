@@ -77,6 +77,15 @@ function custom_echo($x, $length)
   }
 }
 
+function deletFile ($file) {
+    if (file_exists($file)) {
+        unlink($file);
+        return true;
+      } else {
+        return false;
+   }
+}
+
 function is_connected()
 {
     $connected = @fsockopen("www.example.com", 80);

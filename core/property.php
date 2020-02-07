@@ -10,5 +10,10 @@ class Property extends Fetch{
         $arr = self::setValues($arr);
         return self::update($table, $values, $arr);
     }
+
+    function deleteData($table, $values){
+        $values = self::setValues($values);
+        return self::delete($table, $values);
+    }
 }
 ?>

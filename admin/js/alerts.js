@@ -1,5 +1,5 @@
 (function($) {
-  showSwal = function(type){
+  showSwal = function(type, propertyID){
         'use strict';
         if(type === 'basic'){
         	swal({
@@ -55,28 +55,53 @@
     	}else if(type === 'warning-message-and-cancel'){
             swal({
               title: 'Are you sure?',
-              text: "You won't be able to revert this!",
+              text: "You want to delete this property!",
               icon: 'warning',
-              showCancelButton: true,
               confirmButtonColor: '#3f51b5',
-              cancelButtonColor: '#ff4081',
               confirmButtonText: 'Great ',
               buttons: {
-                cancel: {
-                  text: "Cancel",
-                  value: null,
-                  visible: true,
-                  className: "btn btn-danger",
-                  closeModal: true,
-                },
                 confirm: {
-                  text: "OK",
+                  text: "Yes",
                   value: true,
                   visible: true,
                   className: "btn btn-primary",
                   closeModal: true
                 }
               }
+            }).then(function () {
+              var form_data       = new FormData();
+              form_data.append('propertyID', propertyID);
+              $.ajax({
+                url: 'ajax/delete-data.php',
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                method: 'POST',
+                success: function(data) {
+                    console.log(data);
+                    if (data == 'success') {
+                        swal({
+                          title: 'Success!',
+                          text: 'Your property has been deleted',
+                          icon: 'success',
+                        }).then(
+                            function () {
+                                location.reload();
+                            }
+                        );
+                    } else {
+                        swal({
+                          title: 'Error!',
+                          text: 'Your property has not been deleted',
+                          icon: 'error',
+                          button: false
+                        }).then(
+                            function () {}
+                        );
+                    }
+                }
+            });
             })
 
     	}else if(type === 'custom-html'){

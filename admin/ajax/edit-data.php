@@ -7,15 +7,6 @@ require_once('../../core/upload-image.php');
 $property 	 = new Property();
 $uploadImage = new UploadImage();
 
-function deletFile ($file) {
-    if (file_exists($file)) {
-        unlink($file);
-        return true;
-      } else {
-        return false;
-   }
-}
-
 if (isset($_POST['title']) && isset($_POST['propertyID'])){
   if (isset($_SESSION['admin_id'])){
 	        $price 	  = (float) str_replace(',', '', $_POST['price']);
