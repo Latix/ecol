@@ -5,7 +5,7 @@ checkAccess();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
   <?php include 'libs/head.php'; ?>
 </head>
 
@@ -21,8 +21,8 @@ checkAccess();
 						<div class="card-body">
 						  	<h4 class="card-title">All Properties</h4>
 						    <div class="row">
-							    <div class="col-12">
-								    <table id="order-listing" class="table table-striped table-responsive" cellspacing="0">
+							    <div class="col-12 table-responsive">
+								    <table id="order-listing" class="table table-striped" cellspacing="0">
 								        <thead>
 								          <tr>
 												<th class="text-center">Picture</th>
@@ -32,8 +32,8 @@ checkAccess();
 												<th class="text-center">Type</th>
 												<th class="text-center">Status</th>
 												<th class="text-center">Address</th>
-												<th></th>
-												<th></th>
+												<th class="text-center"></th>
+												<th class="text-center"></th>
 								          </tr>
 								        </thead>
 								        <tbody>
@@ -71,11 +71,3 @@ checkAccess();
 	</div>
 </body>
 </html>
-<script type="text/javascript">
-	$(document).ready(function () {
-		// body...
-		$(function () {
-		  $('[data-toggle="tooltip"]').tooltip()
-		})
-	});
-</script>

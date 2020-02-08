@@ -51,4 +51,50 @@ $(document).ready(function () {
 		        }
 		    });
 		});
+
+		$("#block-user").on('click', function () {
+			console.log('hello')
+			  var form_data       = new FormData();
+	      	  form_data.append('userID', $(this).attr('attr-id'));
+	      	  form_data.append('type',   'block');
+		      $.ajax({
+		        url: 'ajax/update-user-status.php',
+		        data: form_data,
+		        contentType: false,
+		        cache: false,
+		        processData: false,
+		        method: 'POST',
+		        success: function(data) {
+		        	console.log(data);
+		            if (data == 'success') {
+		                location.reload();
+		            } else {
+		                toastr.error('User Not blocked', 'Inconceivable!', {timeOut: 3000});
+		            }
+		        }
+		    });
+		});
+
+		$("#unblock-user").on('click', function () {
+			console.log('hello')
+			  var form_data       = new FormData();
+	      	  form_data.append('userID', $(this).attr('attr-id'));
+	      	  form_data.append('type',   'UnBlock');
+		      $.ajax({
+		        url: 'ajax/update-user-status.php',
+		        data: form_data,
+		        contentType: false,
+		        cache: false,
+		        processData: false,
+		        method: 'POST',
+		        success: function(data) {
+		        	console.log(data);
+		            if (data == 'success') {
+		                location.reload();
+		            } else {
+		                toastr.error('User Not unblocked', 'Inconceivable!', {timeOut: 3000});
+		            }
+		        }
+		    });
+		});
 });

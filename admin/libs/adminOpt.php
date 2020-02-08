@@ -5,6 +5,11 @@ $valid_accounts = array(
     "RT" => "Root"
   );
 
+$valid_accounts_HTML = array(
+    "AD" => "primary", 
+    "RT" => "danger"
+  );
+  
 $valid_accounts_status = array(
     0 => 'Inactive',
     1 => 'Active'

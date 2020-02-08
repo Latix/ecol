@@ -18,7 +18,8 @@ if (isset($_SESSION['admin_id'])){
 						echo "mismatch"; 
 					} else {
 						$values = [
-				            'password' 		=> $_POST['new-password']
+				            'password' 		=> $_POST['new-password'],
+				            'lastUpdated' 	=> date('Y-m-d H:i:s'),
 				        ];
 
 				        $cond = ['id' => $id];
@@ -40,6 +41,7 @@ if (isset($_SESSION['admin_id'])){
 		$values = [
             'firstName' 		=> $_POST['firstName'],
             'lastName' 		    => $_POST['lastName'],
+            'lastUpdated' 		=> date('Y-m-d H:i:s'),
         ];
 
         $cond = ['id' => $id];

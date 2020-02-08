@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="node_modules/quill/dist/quill.snow.css">
 <link rel="stylesheet" href="node_modules/simplemde/dist/simplemde.min.css">
 <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">
-<link href="../assets/css/toaster.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/toaster.min.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="css/dropzone.css">

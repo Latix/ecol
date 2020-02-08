@@ -23,7 +23,8 @@ if (isset($_POST['title']) && isset($_POST['propertyID'])){
 	            'baths' 		    => $_POST['baths'] ?? 0,
 	            'area' 		   	    => $_POST['area'],
 	            'garages' 		   	=> $_POST['garages'],
-	            'features'			=> $_POST['features']
+	            'features'			=> $_POST['features'],
+	            'lastUpdated' 		=> date('Y-m-d H:i:s')
 	        ];
 
 	        $cond = ['id' => $_POST['propertyID']];
