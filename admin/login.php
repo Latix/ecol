@@ -11,7 +11,7 @@
   }
 
   if(isset($_POST['login'])) {
-    if($userLogin($_POST['email'], $_POST['password'], $conn)){
+    if($userLogin($_POST['email'], md5($_POST['password']), $conn)){
         header("Location: dashboard.php");
     }else{
         $msg        = 'Invalid email or password';

@@ -8,7 +8,7 @@ $property 	 = new Property();
 if (isset($_SESSION['admin_id'])){
 	if (isset($_POST['old-password']) && isset($_POST['new-password'])) {
 		if ($_POST['old-password'] != '' && $_POST['new-password'] != '' && $_POST['retype-password'] != '') {
-			if ($conn->query("SELECT * FROM users WHERE id='$id' AND password='".$_POST['old-password']."'")->num_rows == 0) {
+			if ($conn->query("SELECT * FROM users WHERE id='$id' AND password='".md5($_POST['old-password'])."'")->num_rows == 0) {
 				echo "invalid"; 
 			} else {
 				if ($_POST['new-password'] == '') {
@@ -18,7 +18,7 @@ if (isset($_SESSION['admin_id'])){
 						echo "mismatch"; 
 					} else {
 						$values = [
-				            'password' 		=> $_POST['new-password'],
+				            'password' 		=> md5($_POST['new-password']),
 				            'lastUpdated' 	=> date('Y-m-d H:i:s'),
 				        ];
 

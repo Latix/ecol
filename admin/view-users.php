@@ -35,7 +35,7 @@ checkAccess();
 								        </thead>
 								        <tbody>
 								        	<?php
-								        		$users = $conn->query("SELECT * FROM users");
+								        		$users = $conn->query("SELECT * FROM users WHERE accountType != 'RT'");
 								        		foreach ($users as $user) :
 								        	?>
 								            <tr>

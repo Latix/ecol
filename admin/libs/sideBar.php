@@ -17,7 +17,7 @@
       <a class="nav-link" data-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users"> <img class="menu-icon" src="images/menu_icons/menu_upload.png" alt="menu icon"> <span class="menu-title">Users</span><i class="menu-arrow"></i></a>
       <div class="collapse" id="users">
           <ul class="nav flex-column sub-menu">
-            <li class="nav-item"><a class="nav-link" href="new-property.php">Create User</a></li>
+            <li class="nav-item"><a class="nav-link" href="new-user.php">Create User</a></li>
             <li class="nav-item"> <a class="nav-link" href="view-users.php">View User(s)</a></li>
         </ul>
       </div>
