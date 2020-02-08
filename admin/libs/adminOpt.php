@@ -5,6 +5,16 @@ $valid_accounts = array(
     "RT" => "Root"
   );
 
+$valid_accounts_status = array(
+    0 => 'Inactive',
+    1 => 'Active'
+);
+
+$valid_accounts_status_HTML = array(
+    0 => 'danger',
+    1 => 'success'
+);
+
 $valid_property = array(
   'AP' => 'Apartment', 
   'CO' => 'Condominium', 
@@ -101,11 +111,12 @@ function is_connected()
 }
 
 if(isset($_SESSION['admin_id'])){
-    $id        = $_SESSION['admin_id'];
-    $position  = $conn->query("SELECT accountType FROM users WHERE id = ".$_SESSION['admin_id'])->fetch_assoc()['accountType'];
-    $firstName = $conn->query("SELECT firstName   FROM users WHERE id = ".$_SESSION['admin_id'])->fetch_assoc()['firstName'];
-    $lastName  = $conn->query("SELECT lastName    FROM users WHERE id = ".$_SESSION['admin_id'])->fetch_assoc()['lastName'];
-    $fullName  = ucwords($firstName.' '.$lastName);
+    $id             = $_SESSION['admin_id'];
+    $position       = $conn->query("SELECT accountType FROM users WHERE id = ".$_SESSION['admin_id'])->fetch_assoc()['accountType'];
+    $firstName      = $conn->query("SELECT firstName   FROM users WHERE id = ".$_SESSION['admin_id'])->fetch_assoc()['firstName'];
+    $lastName       = $conn->query("SELECT lastName    FROM users WHERE id = ".$_SESSION['admin_id'])->fetch_assoc()['lastName'];
+    $fullName       = ucwords($firstName.' '.$lastName);
+    $logged_user    = $conn->query("SELECT * FROM users WHERE id=".$_SESSION['admin_id'])->fetch_assoc();
 }
 
 if (isset($_GET["action"])) {

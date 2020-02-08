@@ -18,3 +18,4 @@
 <script src="js/settings.js"></script>
 <script src="js/todolist.js"></script>
 <script src="js/wizard.js"></script>
+<script src="js/custom.js"></script>

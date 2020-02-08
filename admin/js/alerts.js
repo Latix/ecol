@@ -79,7 +79,6 @@
                 processData: false,
                 method: 'POST',
                 success: function(data) {
-                    console.log(data);
                     if (data == 'success') {
                         swal({
                           title: 'Success!',
