@@ -10,7 +10,6 @@ $uploadImage = new UploadImage();
 if (isset($_POST['title'])){
   if (isset($_SESSION['admin_id'])){
         $price 	  = (float) str_replace(',', '', $_POST['price']);
-        // $features = (isset($_POST['features'])) ? implode(", ", $_POST['features']) : '';
 
         $values = [
             'title' 			=> $_POST['title'],

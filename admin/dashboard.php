@@ -17,7 +17,7 @@ checkAccess();
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
               <div class="card card-statistics">
                 <div class="card-body">
                   <div class="clearfix">
@@ -27,7 +27,7 @@ checkAccess();
                     <div class="float-right">
                       <p class="card-text text-right">Total Properties</p>
                       <div class="fluid-container">
-                        <h3 class="card-title font-weight-bold text-right mb-0">5</h3>
+                        <h3 class="card-title font-weight-bold text-right mb-0"><?= $conn->query("SELECT * FROM property")->num_rows; ?></h3>
                       </div>
                     </div>
                   </div>
@@ -36,7 +36,28 @@ checkAccess();
                   </p>
                 </div>
               </div>
-            </div><div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
+              <div class="card card-statistics">
+                <div class="card-body">
+                  <div class="clearfix">
+                    <div class="float-left">
+                      <i class="mdi mdi-home-variant text-dark icon-lg"></i>
+                    </div>
+                    <div class="float-right">
+                      <p class="card-text text-right">Total Users</p>
+                      <div class="fluid-container">
+                        <h3 class="card-title font-weight-bold text-right mb-0"><?= $conn->query("SELECT * FROM users WHERE accountType != 'RT'")->num_rows; ?></h3>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="text-muted mt-3">
+                    <i class="mdi mdi-alert-octagon mr-1" aria-hidden="true"></i>Total
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl6 col-lg6 col-md-6 col-sm-6 grid-margin stretch-card">
               <div class="card card-statistics">
                 <div class="card-body">
                   <div class="clearfix">
@@ -46,7 +67,7 @@ checkAccess();
                     <div class="float-right">
                       <p class="card-text text-right">Add Property</p>
                       <div class="fluid-container">
-                        <h3 class="card-title font-weight-bold text-right mb-0">-</h3>
+                        <h3 class="card-title font-weight-bold text-right mb-0"><span class="card-link"><a href="new-property.php">Click Here</a></span></h3>
                       </div>
                     </div>
                   </div>
@@ -55,7 +76,8 @@ checkAccess();
                   </p>
                 </div>
               </div>
-            </div><div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 grid-margin stretch-card">
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 grid-margin stretch-card">
               <div class="card card-statistics">
                 <div class="card-body">
                   <div class="clearfix">
@@ -65,7 +87,7 @@ checkAccess();
                     <div class="float-right">
                       <p class="card-text text-right">View Properties</p>
                       <div class="fluid-container">
-                        <h3 class="card-title font-weight-bold text-right mb-0">-</h3>
+                        <h3 class="card-title font-weight-bold text-right mb-0"><span class="card-link"><a href="view-property.php">Click Here</a></span></h3>
                       </div>
                     </div>
                   </div>

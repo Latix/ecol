@@ -50,6 +50,24 @@
   text-overflow: ellipsis;
 }
 
+.card-link
+{
+	font-weight: normal;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.card-link a
+{
+	text-decoration: none;
+	color: #222222;
+}
+
+.card-link a:hover
+{
+	color: grey;
+}
+
 @media (max-width: 768px) {
 	.hide-step-text
 	{
