@@ -1,3 +1,7 @@
+<?php
+    require_once('core/fetch.php');
+    require_once('assets/libs/mainOpt.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- Header -->
@@ -100,28 +104,29 @@
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-lg-3 col-md-6 magic-margin-bottom ">
+                <?php 
+                    $latest = $conn->query("SELECT * FROM property ORDER BY id DESC"); 
+                    foreach ($latest as $property) :
+                ?>
+                <div class="col-md-4 magic-margin-bottom ">
                     <div class="card property-card h-100 position-relative box-shadow">
                         <div class="h-100"
-                            style="background: url('assets/oleks/images/prop1.png'); background-position: center; background-size: cover;">
+                            style="background: url('<?= $property['picture1']; ?>'); background-position: center; background-size: cover;">
                             <div class="h-100 black-overlay">
                             </div>
                         </div>
 
                         <div>
-                            <p class="text-white prop-name">Thomas Estate</p>
-                            <div class="prop-name-border"></div>
+                            <p class="text-white prop-name"><?= $property['title']; ?> - For <?= $valid_status[$property['status']]; ?></p>
                         </div>
                     </div>
 
                     <div class="text-center mt-4">
-                        <h5 class="blue-text">$15000</h5>
-
-                        <h5 class="blue-text">#105000</h5>
-
-                        <a href="./property-details.html"><button class="btn btn-blue-outline px-4">Explore</button></a>
+                        <h5 class="blue-text">₦<?= number_format($property['price']); ?></h5>
+                        <a href="property-details.php?id=<?= $property['id']; ?>"><button class="btn btn-blue-outline px-4">Explore</button></a>
                     </div>
                 </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </section>
@@ -136,6 +141,27 @@
                 <div class="col-md-6"></div>
             </div>
             <div class="row mt-4">
+                <?php 
+                    $luxury = $conn->query("SELECT * FROM property"); 
+                    foreach ($luxury as $property) :
+                ?>
+                <div class="col-md-4 magic-margin-bottom ">
+                    <div class="card property-card h-100 position-relative box-shadow">
+                        <div class="h-100"
+                            style="background: url('<?= $property['picture1']; ?>'); background-position: center; background-size: cover;">
+                            <div class="h-100 black-overlay">
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-white prop-name"><?= $property['title']; ?> - For <?= $valid_status[$property['status']]; ?></p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <h5 class="orange-text">₦<?= number_format($property['price']); ?></h5>
+                         <a href="property-details.php?id=<?= $property['id']; ?>"><button class="btn btn-orange-outline px-4">Explore</button></a>
+                    </div>
+                </div>
+                <?php endforeach; ?>
                 <div class="col-md-4 magic-margin-bottom ">
                     <div class="card property-card h-100 position-relative box-shadow">
                         <div class="h-100"
@@ -144,12 +170,12 @@
                             </div>
                         </div>
                         <div>
-                            <p class="text-white prop-name">Thomas Estate</p>
+                            <p class="text-white prop-name">Lekki Homes</p>
                             <div class="prop-name-border"></div>
                         </div>
                     </div>
                     <div class="text-center mt-4">
-                        <h5 class="orange-text">#105000</h5>
+                        <h5 class="orange-text">₦1500</h5>
                         <button class="btn btn-orange-outline px-4">Explore</button>
                     </div>
                 </div>

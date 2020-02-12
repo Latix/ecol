@@ -44,6 +44,18 @@ footer {
     color: #f57b18;
 }
 
+.prop-link a
+{
+    text-decoration: none;
+    color: #6c757d;
+    transition: all .5s;
+}
+
+.prop-link a:hover
+{
+    color: orange;
+}
+
 
 .bitcoin-div {
     max-width: 450px;
@@ -66,6 +78,11 @@ footer {
 .marg-rd
 {
     margin: 40px;
+}
+
+.marg-top
+{
+    margin-top: 30px;
 }
 
 .padding-rd
@@ -105,7 +122,7 @@ footer {
 .light-blue-div {
     background: #073265;
     min-width: 150px;
-    max-width: 200px;
+    max-width: 1000px;
 }
 
 

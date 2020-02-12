@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <a class="navbar-brand text-white" href="#">LOGO</a>
+    <a class="navbar-brand text-white" href="#" style="font-size: 2.25rem;">Oleks</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
                     Properties
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="./latest-properties.php">Locations</a>
+                    <a class="dropdown-item" href="./latest-properties.php">All Properties</a>
                     <a class="dropdown-item" href="./luxury-properties.php">Luxury Properties</a>
                 </div>
 
