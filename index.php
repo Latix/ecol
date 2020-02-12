@@ -27,68 +27,55 @@
                 </div>
 
                 <div class="col-lg-5 mt-5">
-                    <div class="blue-div p-5">
+                    <div class="blue-div p-5" style="position: relative;top: -5%;">
                         <h4 class="text-white font-weight-normal">Search for Properties:</h4>
-                        <form class="pt-4">
+                        <form class="pt-4" method="GET">
                             <div class="form-group">
                                 <label for="location" class="text-white">Location</label>
-                                <input type="text"
-                                    class="form-control border-top-left-radius border-bottom-right-radius" id="location"
-                                    placeholder="e.g Lekki">
+                                <select class="form-control border-top-left-radius border-bottom-right-radius" id="location" name="location">
+                                    <?php foreach ($valid_states as $key => $value) : ?>
+                                    <option value="<?= $key; ?>" <?= (isset($_GET['location']) && $key == $_GET['location']) ? 'checked' : ''; ?>><?= $value; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
 
                             <div class="form-group">
-                                <label for="type" class="text-white">Type</label>
-                                <select class="form-control border-top-left-radius border-bottom-right-radius"
-                                    id="type">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
+                                <label for="type" class="text-white">Property Type</label>
+                                <select class="form-control border-top-left-radius border-bottom-right-radius" id="property_type" name="property_type" >
+                                    <?php foreach ($valid_property as $key => $value) : ?>
+                                    <option value="<?= $key; ?>" <?= (isset($_GET['location']) && $key == $_GET['property_type']) ? 'checked' : ''; ?>><?= $value; ?></option>
+                                    <?php endforeach; ?>
                                 </select>
                             </div>
 
                             <div class="form-group">
                                 <label for="price-range" class="text-white">Price Range</label>
-                                <select class="form-control border-top-left-radius border-bottom-right-radius"
-                                    id="price-range">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="bedAndBath" class="text-white">Bedroom/Bathroom</label>
-
-                                <div class="d-inline-flex w-100">
-                                    <select
-                                        class="form-control border-top-left-radius no-border-bottom-right no-border-top-right"
-                                        id="bedAndBath">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-
-                                    <select style="border-left: 1px solid grey !important;"
-                                        class="form-control border-bottom-right-radius no-border-top-left no-border-bottom-left"
-                                        id="bedAndBath">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="bedAndBath" class="text-white">Min. Value</label>
+                                        <input type="number" class="form-control" name="min" value="<?= $_GET['min'] ?? 0; ?>" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="bedAndBath" class="text-white">Max. Value</label>
+                                        <input type="number" class="form-control" name="max" value="<?= $_GET['max'] ?? 0; ?>" />
+                                    </div>
                                 </div>
                             </div>
 
-                            <button
-                                class="btn btn-blue w-100 border-top-left-radius border-bottom-right-radius my-4">Search</button>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label for="bedAndBath" class="text-white">Bedrooms</label>
+                                        <input type="number" class="form-control" name="beds" placeholder="Beds" value="<?= $_GET['beds'] ?? 0; ?>" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="bedAndBath" class="text-white">Bathrooms</label>
+                                        <input type="number" class="form-control" name="baths" placeholder="Baths" value="<?= $_GET['baths'] ?? 0; ?>" />
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="filter-search" value="full-search"/>
+                            <button class="btn btn-blue w-100 border-top-left-radius border-bottom-right-radius my-4">Search</button>
                         </form>
                     </div>
                 </div>
@@ -105,7 +92,17 @@
             </div>
             <div class="row mt-3">
                 <?php 
-                    $latest = $conn->query("SELECT * FROM property ORDER BY id DESC"); 
+                    if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
+                        $sql  = "SELECT * FROM property WHERE ";
+                        $sql .= " location='".$_GET['location']."' ";
+                        $sql .= " AND propertyType='".$_GET['property_type']."' ";
+                        $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
+                        $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
+                        $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
+                        $latest = $conn->query($sql); 
+                    } else {
+                        $latest = $conn->query("SELECT * FROM property ORDER BY id DESC"); 
+                    }
                     foreach ($latest as $property) :
                 ?>
                 <div class="col-md-4 magic-margin-bottom ">
@@ -142,7 +139,18 @@
             </div>
             <div class="row mt-4">
                 <?php 
-                    $luxury = $conn->query("SELECT * FROM property"); 
+                    if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
+                        $sql  = "SELECT * FROM property WHERE ";
+                        $sql .= " location='".$_GET['location']."' ";
+                        $sql .= " AND propertyType='".$_GET['property_type']."' ";
+                        $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
+                        $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
+                        $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
+                        $luxury = $conn->query($sql); 
+                    } else {
+                        $luxury = $conn->query("SELECT * FROM property"); 
+                    }
+                    
                     foreach ($luxury as $property) :
                 ?>
                 <div class="col-md-4 magic-margin-bottom ">

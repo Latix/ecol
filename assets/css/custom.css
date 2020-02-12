@@ -26,6 +26,11 @@
     text-align: center;
 }
 
+.border-none
+{
+  border: none !important;
+}
+
 .media-middle img
 {
     max-width: 50%;

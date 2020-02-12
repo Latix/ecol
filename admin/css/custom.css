@@ -42,6 +42,12 @@
 	padding: 2.5%;
 }
 
+.card-head-text
+{
+	font-size: 18px;
+	font-weight: bold;
+}
+
 .truncate 
 {
   width: 50px;

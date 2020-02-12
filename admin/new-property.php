@@ -21,7 +21,6 @@ checkAccess();
 	                <div class="card">
 		                <div class="card-body">
 			                <h4 class="card-title">Property Wizard</h4>
-
 			                <div id="property-form" enctype="multipart/form-data">
 			                    <div>
 				                    <h3>&nbsp;&nbsp;<i class="fa fa-user"></i>&nbsp;&nbsp;<span class="hide-step-text">Basic Information</span></h3>
@@ -66,7 +65,7 @@ checkAccess();
 						                        <label class="label-text" for="Property_Type">Property Type</label>
 						                        <select class="form-control property_type" id="property_type" name="property_type">
 						                        	<?php foreach ($valid_property as $key => $value) : ?>
-						                        	<option value="<?= $key; ?>" <?= (isset($_POST['location']) && $key == $_POST['property_type']) ? 'checked' : ''; ?>><?= $value; ?></option>
+						                        	<option value="<?= $key; ?>" <?= (isset($_POST['property_type']) && $key == $_POST['property_type']) ? 'checked' : ''; ?>><?= $value; ?></option>
 							                        <?php endforeach; ?>
 						                        </select>
 					                        </div>
@@ -74,7 +73,7 @@ checkAccess();
 						                        <label class="label-text" for="Status">Status</label>
 						                        <select class="form-control status" id="status" name="status">
 						                        	<?php foreach ($valid_status as $key => $value) : ?>
-						                        	<option value="<?= $key; ?>" <?= (isset($_POST['location']) && $key == $_POST['status']) ? 'checked' : ''; ?>><?= $value; ?></option>
+						                        	<option value="<?= $key; ?>" <?= (isset($_POST['status']) && $key == $_POST['status']) ? 'checked' : ''; ?>><?= $value; ?></option>
 							                        <?php endforeach; ?>
 						                        </select>
 					                        </div>

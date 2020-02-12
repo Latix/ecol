@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-    <a class="navbar-brand text-white" href="#" style="font-size: 2.25rem;">Oleks</a>
+    <a class="navbar-brand text-white" href="./" style="font-size: 2.25rem;font-family: fantasy;">Oleks</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse"
         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
         aria-label="Toggle navigation">

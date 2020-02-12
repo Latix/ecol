@@ -25,7 +25,7 @@ checkAccess();
                       <i class="mdi mdi-home-variant text-dark icon-lg"></i>
                     </div>
                     <div class="float-right">
-                      <p class="card-text text-right">Total Properties</p>
+                      <p class="card-text text-right card-head-text">Total Properties</p>
                       <div class="fluid-container">
                         <h3 class="card-title font-weight-bold text-right mb-0"><?= $conn->query("SELECT * FROM property")->num_rows; ?></h3>
                       </div>
@@ -42,10 +42,10 @@ checkAccess();
                 <div class="card-body">
                   <div class="clearfix">
                     <div class="float-left">
-                      <i class="mdi mdi-home-variant text-dark icon-lg"></i>
+                      <i class="fa fa-user text-dark icon-lg"></i>
                     </div>
                     <div class="float-right">
-                      <p class="card-text text-right">Total Users</p>
+                      <p class="card-text text-right card-head-text">Total Users</p>
                       <div class="fluid-container">
                         <h3 class="card-title font-weight-bold text-right mb-0"><?= $conn->query("SELECT * FROM users WHERE accountType != 'RT'")->num_rows; ?></h3>
                       </div>
@@ -65,9 +65,9 @@ checkAccess();
                       <i class="mdi mdi-plus-circle-outline text-dark icon-lg"></i>
                     </div>
                     <div class="float-right">
-                      <p class="card-text text-right">Add Property</p>
+                      <p class="card-text text-right card-head-text">Add Property</p>
                       <div class="fluid-container">
-                        <h3 class="card-title font-weight-bold text-right mb-0"><span class="card-link"><a href="new-property.php">Click Here</a></span></h3>
+                        <h3 class="card-title font-weight-bold text-right mb-0"><span class="card-link"><a href="new-property.php">Click Here&nbsp;<i class="fa fa-arrow-right"></i></a></span></h3>
                       </div>
                     </div>
                   </div>
@@ -85,9 +85,9 @@ checkAccess();
                       <i class="mdi mdi-home-modern text-dark icon-lg"></i>
                     </div>
                     <div class="float-right">
-                      <p class="card-text text-right">View Properties</p>
+                      <p class="card-text text-right card-head-text">View Properties</p>
                       <div class="fluid-container">
-                        <h3 class="card-title font-weight-bold text-right mb-0"><span class="card-link"><a href="view-property.php">Click Here</a></span></h3>
+                        <h3 class="card-title font-weight-bold text-right mb-0"><span class="card-link"><a href="view-property.php">Click Here&nbsp;<i class="fa fa-arrow-right"></i></a></span></h3>
                       </div>
                     </div>
                   </div>

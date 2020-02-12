@@ -41,12 +41,13 @@
                     </div> -->
                     <div class="col-md-3 mt-md-0 mt-4 footer-text">
                         <h5 class="text-white font-weight-normal  mb-4">RECENT LOCATIONS</h4>
-                        <p>AJAH</p>
-                        <p>LEKKI</p>
-                        <p>OKOMAIKO</p>
-                        <P>FESTAC</p>
-                        <P>EPE</p>
-                        <P>VICTORIA ISLAND</p>
+                        <?php 
+                            $i=0; foreach ($valid_states as $key => $value) {
+                                if ($i < 6) {
+                        ?>
+                        <p><?= $value; ?></p>
+
+                        <?php $i++; }}; ?>
                     </div>
                     <div class="col-md-5">
                         <h5 class="text-white font-weight-normal  mb-4">CONTACT</h4>
