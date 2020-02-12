@@ -98,6 +98,36 @@ checkAccess();
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-4">Recent Properties</h5>
+                  <div class="new-accounts">
+                    <ul class="chats ps">
+                      <?php 
+                        $properties = $conn->query("SELECT * FROM property"); 
+                        foreach ($properties as $property) :
+                      ?>
+                      <li class="chat-persons">
+                        <a href="#">
+                          <span class="pro-pic"><img src="<?= $property['picture1'] ?>" alt=""></span>
+                          <div class="user">
+                            <p class="u-name"><?= $property['title'] ?> - For <?= $valid_status[$property['status']]; ?></p>
+                            <p class="u-designation"><?= $property['description']; ?></p>
+                          </div>
+                          <p class="joined-date"><?= datetimeToText($property['created']); ?></p>
+                        </a>
+                      </li>
+                      </ul>
+                      <?php endforeach; ?>
+                      <!-- list person -->
+                    <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <?php include('libs/footer.php'); ?>
         <?php include('libs/javascript.php'); ?>

@@ -1,0 +1,305 @@
+body {
+    overflow-x: hidden;
+}
+
+footer {
+    background: #000;
+}
+
+.footer-text {
+    color: #6e6868;
+}
+
+.hr {
+    border-bottom: 1px solid #6e6868;
+}
+
+.nav-item {
+    min-width: 120px;
+}
+
+.footer-text-area {
+    min-height: 156px;
+}
+
+.footer-input {
+    background: #212123;
+}
+
+.footer-contact-btn {
+    background: #96afce;
+    color: #fff;
+}
+
+.magic-margin-bottom {
+    margin-bottom: 185px;
+}
+
+
+.blue-text {
+    color: #0f3f75;
+}
+
+.orange-text {
+    color: #f57b18;
+}
+
+
+.bitcoin-div {
+    max-width: 450px;
+}
+
+
+.black-overlay {
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+.luxury-prop-card {
+    min-height: 40vh;
+}
+
+.light-blue-bg {
+    background: #96afce;
+}
+
+.marg-rd
+{
+    margin: 40px;
+}
+
+.padding-rd
+{
+    padding: 20px;
+}
+
+.blue-text h5
+{
+    font-size: 18px;
+}
+
+#newsletter {
+    background: #d1d9e3;
+}
+
+#luxury-property {
+    background: #170f08;
+    height: 100%;
+}
+
+#latest-property {
+    height: 100%;
+}
+
+
+.box-shadow {
+    -webkit-box-shadow: 10px 10px 103px -28px rgba(0, 0, 0, 0.63);
+    -moz-box-shadow: 10px 10px 103px -28px rgba(0, 0, 0, 0.63);
+    box-shadow: 10px 10px 103px -28px rgba(0, 0, 0, 0.63);
+}
+
+.blue-div {
+    background: #0a151e;
+}
+
+.light-blue-div {
+    background: #073265;
+    min-width: 150px;
+    max-width: 200px;
+}
+
+
+.property-card {
+    min-height: 20vh;
+}
+
+.card {
+    border: none;
+}
+
+
+.btn-blue-outline {
+    border: 1px solid #0f3f75;
+    background: transparent;
+    color: #0f3f75;
+    font-size: 11px;
+}
+
+.btn-orange-outline {
+    border: 1px solid #f57b18;
+    background: transparent;
+    color: #f57b18;
+    font-size: 11px;
+}
+
+.btn-orange {
+    background: #f57b18;
+    color: #fff;
+}
+
+.btn {
+    height: 50px;
+}
+
+.btn-blue {
+    background: #07397c;
+    color: #fff;
+}
+
+
+.prop-name {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+
+.prop-name-border {
+    position: absolute;
+    border-bottom: 1.5px solid #fff;
+    width: 25%;
+    bottom: 21px;
+    left: 125px;
+}
+
+.brief-desc {
+    background: rgba(7, 50, 101, 0.7);
+    color: #fff;
+    max-width: 350px;
+}
+
+.prop-details-card {
+    min-height: 50vh;
+}
+
+.border-top-left-radius {
+    border-top-left-radius: 25px;
+}
+
+.border-bottom-left-radius {
+    border-bottom-left-radius: 25px;
+}
+
+.border-top-right-radius {
+    border-top-right-radius: 25px;
+}
+
+.border-bottom-right-radius {
+    border-bottom-right-radius: 25px;
+}
+
+.no-border-top-left {
+    border-top-left-radius: 0;
+}
+
+.no-border-bottom-left {
+    border-bottom-left-radius: 0;
+}
+
+.no-border-bottom-right {
+    border-bottom-right-radius: 0;
+}
+
+.no-border-top-right {
+    border-top-right-radius: 0;
+}
+
+.border-left {
+    border: 2px solid grey !important;
+}
+
+.border-right {
+    border-right: 1px solid #dee2e6 !important;
+    border-radius: 0 !important;
+}
+
+/* forms */
+.form-control {
+    outline: none !important;
+    box-shadow: none !important;
+    height: 50px !important;
+    border: none !important;
+}
+
+.latest-prop-card {
+    -webkit-box-shadow: 10px 10px 34px 1px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 10px 10px 34px 1px rgba(0, 0, 0, 0.16);
+    box-shadow: 10px 10px 34px 1px rgba(0, 0, 0, 0.16);
+
+}
+
+/* opacity */
+.opacity-1 {
+    opacity: 0.5;
+}
+
+@media only screen and (min-width: 1024px) {
+    #hero-section {
+        height: 100vh;
+    }
+
+    .showing-schedule {
+        position: absolute;
+        z-index: 99;
+        top: -42px;
+        right: 0;
+        min-width: 230px;
+        background: #073265;
+    }
+
+    #latest-property-section {
+        height: 50vh;
+    }
+
+    #luxury-property-section {
+        height: 80vh;
+    }
+
+    #latest-property {
+        min-height: 70vh;
+    }
+
+    #details-section {
+        min-height: 80vh;
+    }
+
+    .brief-desc {
+        top: 20%;
+        right: 10%;
+        position: absolute;
+    }
+
+    .details-header {
+        position: absolute;
+        bottom: 40px;
+        width: 50%;
+    }
+
+    #luxury-property {
+        background: #170f08;
+        min-height: 70vh;
+    }
+
+    .blue-square {
+        background: #f7fbff;
+        height: 200px;
+        min-width: 1000px;
+        position: absolute;
+        left: 0;
+    }
+
+    .pink-square {
+        width: 200px;
+        height: 400px;
+        background: #fffcfa;
+        position: absolute;
+        right: 0;
+        top: 10%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 823px) {
+    .bitcoin-div>h3 {
+        font-size: 16px;
+    }
+
+}
