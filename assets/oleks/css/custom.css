@@ -6,6 +6,11 @@ footer {
     background: #000;
 }
 
+.property-loader
+{
+    text-align: center;
+}
+
 .footer-text {
     color: #6e6868;
 }

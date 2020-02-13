@@ -6,5 +6,6 @@
     <link rel="stylesheet" href="assets/oleks/css/bootstrap.css">
     <link rel="stylesheet" href="assets/oleks/css/custom.css">
     <link rel="stylesheet" href="assets/oleks/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets//css/pagination.css">
     <link href="https://fonts.googleapis.com/css?family=Heebo:100,300,400" rel="stylesheet">
 </head> 

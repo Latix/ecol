@@ -18,8 +18,8 @@ $valid_status = array(
 );
 
 $valid_states = array(
-    "Outside Nigeria"  => "Outside Nigeria",
-    "ABUJA FCT"        => "ABUJA FCT",
+    "Outside_Nigeria"  => "Outside Nigeria",
+    "ABUJA_FCT"        => "ABUJA FCT",
     "ABIA"             => "ABIA",
     "ADAMAWA"          => "ADAMAWA",
     "AKWA IBOM"        => "AKWA IBOM",
@@ -28,7 +28,7 @@ $valid_states = array(
     "BAYELSA"          => "BAYELSA",
     "BENUE"            => "BENUE",
     "BORNO"            => "BORNO",
-    "CROSS RIVER"      => "CROSS RIVER",
+    "CROSS_RIVER"      => "CROSS RIVER",
     "DELTA"            => "DELTA",
     "EBONYI"           => "EBONYI",
     "EDO"              => "EDO",

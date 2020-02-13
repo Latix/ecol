@@ -87,3 +87,4 @@
     <script src="assets/oleks/js/popper.min.js"></script>
     <script src="assets/oleks/js/bootstrap.min.js"></script>
     <script src="assets/oleks/js/custom.js"></script>
+    <script src="assets/js/pagination.js"></script>

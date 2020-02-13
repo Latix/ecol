@@ -90,7 +90,7 @@
                     <a href="latest-properties.php"><h4 class="font-weight-bold blue-text cursor">LATEST PROPERTIES</h4></a>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div  class="row mt-3">
                 <?php 
                     if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
                         $sql  = "SELECT * FROM property WHERE ";
@@ -99,13 +99,14 @@
                         $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
                         $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
                         $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
+                        $sql .= " ORDER BY RAND() LIMIT 6 ";
                         $latest = $conn->query($sql); 
                     } else {
-                        $latest = $conn->query("SELECT * FROM property ORDER BY id DESC"); 
+                        $latest = $conn->query("SELECT * FROM property ORDER BY RAND() LIMIT 6"); 
                     }
                     foreach ($latest as $property) :
                 ?>
-                <div class="col-md-4 magic-margin-bottom ">
+                <div class="col-md-4 magic-margin-bottom">
                     <div class="card property-card h-100 position-relative box-shadow">
                         <div class="h-100"
                             style="background: url('<?= $property['picture1']; ?>'); background-position: center; background-size: cover;">
@@ -146,9 +147,10 @@
                         $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
                         $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
                         $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
+                        $sql .= " ORDER BY RAND() LIMIT 6 ";
                         $luxury = $conn->query($sql); 
                     } else {
-                        $luxury = $conn->query("SELECT * FROM property"); 
+                        $luxury = $conn->query("SELECT * FROM property LIMIT 6"); 
                     }
                     
                     foreach ($luxury as $property) :
@@ -170,23 +172,6 @@
                     </div>
                 </div>
                 <?php endforeach; ?>
-                <div class="col-md-4 magic-margin-bottom ">
-                    <div class="card property-card h-100 position-relative box-shadow">
-                        <div class="h-100"
-                            style="background: url('assets/oleks/images/prop1.png'); background-position: center; background-size: cover;">
-                            <div class="h-100 black-overlay">
-                            </div>
-                        </div>
-                        <div>
-                            <p class="text-white prop-name">Lekki Homes</p>
-                            <div class="prop-name-border"></div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <h5 class="orange-text">₦1500</h5>
-                        <button class="btn btn-orange-outline px-4">Explore</button>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
