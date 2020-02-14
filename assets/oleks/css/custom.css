@@ -49,6 +49,39 @@ footer {
     color: #f57b18;
 }
 
+.bg-about-color {
+    background: #f3f6fa;
+    max-width: 470px;
+    min-height: 300px;
+}
+
+
+.phone-number-div {
+    position: absolute;
+    bottom: -22px;
+    right: 80px;
+    z-index: 9;
+}
+
+.bg-about-1 {
+    background-image: url('../images/about-3.jpeg');
+    background-position: center;
+    background-size: cover;
+    min-height: 50vh;
+}
+
+.bg-about-2 {
+    background-image: url('../images/about-2.jpeg');
+    background-position: center;
+    background-size: cover;
+    min-height: 50vh;
+}
+
+
+#about-hero-section {
+    height: 50vh;
+}
+
 .prop-link a
 {
     text-decoration: none;

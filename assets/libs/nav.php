@@ -12,7 +12,7 @@
                 <a class="nav-link text-white" href="./">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">About Us</a>
+                <a class="nav-link text-white" href="./about-us.php">About Us</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -25,7 +25,7 @@
                 </div>
 
             <li class="nav-item">
-                <a class="nav-link text-white" href="admin/login.php">Blog</a>
+                <a class="nav-link text-white" href="#">Contact</a>
             </li>
             </li>
         </ul>
