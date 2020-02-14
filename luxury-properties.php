@@ -1,6 +1,29 @@
 <?php
     require_once('core/fetch.php');
     require_once('assets/libs/mainOpt.php');
+
+    $items = 6;
+
+    if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
+        $rent_sql  = "SELECT * FROM property WHERE status='RT' AND propertyType='CO' AND ";
+        $rent_sql .= " location='".$_GET['location']."' ";
+        $rent_sql .= " AND propertyType='".$_GET['property_type']."' ";
+        $rent_sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
+        $rent_sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
+        $rent_sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
+        $rent_total_pages = $conn->query($sql)->num_rows; 
+
+        $sale_sql  = "SELECT * FROM property WHERE status='SA' AND propertyType='CO' AND ";
+        $sale_sql .= " location='".$_GET['location']."' ";
+        $sale_sql .= " AND propertyType='".$_GET['property_type']."' ";
+        $sale_sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
+        $sale_sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
+        $sale_sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
+        $sale_total_pages = $conn->query($sql)->num_rows; 
+    } else {
+        $rent_total_pages = $conn->query("SELECT * FROM property WHERE status='RT' AND propertyType='CO'")->num_rows;
+        $sale_total_pages = $conn->query("SELECT * FROM property WHERE status='SA' AND propertyType='CO'")->num_rows;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +65,9 @@
                             <div class="col-md-3 border-right">
                                 <div class="form-group">
                                     <label for="type" class="w-100 text-center">Property Type</label>
-                                    <select class="form-control" id="type">
+                                    <select class="form-control" id="property_type" name="property_type">
                                         <?php foreach ($valid_property as $key => $value) : ?>
-                                        <option value="<?= $key; ?>" <?= (isset($_GET['location']) && $key == $_GET['property_type']) ? 'checked' : ''; ?>><?= $value; ?></option>
+                                        <option value="<?= $key; ?>" <?= (isset($_GET['property_type']) && $key == $_GET['property_type']) ? 'checked' : ''; ?>><?= $value; ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -88,93 +111,45 @@
         </div>
         <div class="container pt-5 mb-5">
             <!-- latest Properties for rent -->
-            <h4 class="text-secondary font-weight-bold">LUXURY PROPERTIES FOR <span style="color: #96afce;">RENT</span>
+            <h4 class="text-secondary font-weight-bold">LATEST PROPERTIES FOR <span style="color: #96afce;">RENT</span>
             </h4>
             <hr>
-            <div class="row mt-5">
-                <?php 
-                    if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
-                        $sql  = "SELECT * FROM property WHERE status='RT' AND propertyType='CD' AND ";
-                        $sql .= " location='".$_GET['location']."' ";
-                        $sql .= " AND propertyType='".$_GET['property_type']."' ";
-                        $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
-                        $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
-                        $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
-                        $rent = $conn->query($sql); 
-                    } else {
-                        $rent = $conn->query("SELECT * FROM property WHERE status='RT' AND propertyType='CD' ORDER BY id DESC"); 
-                    }
-                    foreach ($rent as $property) :
-                ?>
-                <div class="col-md-4 mb-md-0 mb-5 marg-top">
-                    <div class="card latest-prop-card">
-                        <div class="card-header p-0">
-                            <img src="<?= $property['picture1']; ?>" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <h5><?= $property['title']; ?></h5>
-
-                            <p class="text-secondary"><?= $valid_property[$property['propertyType']]; ?></p>
-
-                            <p class="small text-secondary"><?= $property['address']; ?></p>
-
-                            <p class="orange-text">₦<?= number_format($property['price']); ?></p>
-
-                        </div>
-                        <div class="card-footer bg-white">
-                            <p class="text-secondary"><?= $property['beds']; ?> Beds  <?= $property['baths']; ?> Baths</p>
-                            <p class="text-right prop-link"><a href="property-details.php?id=<?= $property['id']; ?>">Explore&nbsp;<i class="fa fa-arrow-right"></i></a></p>
-                        </div>
-                    </div>
-                </div>
-                <?php endforeach; ?>
+            <div id="rent-target-content" class="row mt-5">
+                 
             </div>
+            <nav style="float: right;padding: 10px;">
+                <ul class="rent-pagination">
+                <?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
+                    if($i == 1):?>
+                    <li class='active' id="<?php echo $i;?>"><a href='luxury-rent-pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li> 
+                    <?php else:?>
+                    <li id="<?php echo $i;?>"><a href='luxury-rent-pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
+                <?php endif;?>          
+                <?php endfor; endif;?>
+                </ul>
+            </nav>
         </div>
         <div style="background: #344c6d; height: 20vh;"></div>
         <div class="container pt-5 mb-5">
             <!-- latest Properties for rent -->
-            <h4 class="text-secondary font-weight-bold">LUXURY PROPERTIES FOR <span style="color: #96afce;">SALE</span>
+            <h4 class="text-secondary font-weight-bold">LATEST PROPERTIES FOR <span style="color: #96afce;">SALE</span>
             </h4>
             <hr>
             <div class="row mt-5">
-                <?php 
-                    if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
-                        $sql  = "SELECT * FROM property WHERE status='SA' AND propertyType='CD' AND ";
-                        $sql .= " location='".$_GET['location']."' ";
-                        $sql .= " AND propertyType='".$_GET['property_type']."' ";
-                        $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
-                        $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
-                        $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
-                        $sale = $conn->query($sql); 
-                    } else {
-                        $sale = $conn->query("SELECT * FROM property WHERE status='SA' AND propertyType='CD' ORDER BY id DESC"); 
-                    }
-                    foreach ($sale as $property) :
-                ?>
-                <div class="col-md-4 mb-md-0 mb-5 marg-top">
-                    <div class="card latest-prop-card">
-                        <div class="card-header p-0">
-                            <img src="<?= $property['picture1']; ?>" class="img-fluid" alt="">
-                        </div>
-
-                        <div class="card-body">
-                            <h5><?= $property['title']; ?></h5>
-
-                            <p class="text-secondary"><?= $valid_property[$property['propertyType']]; ?></p>
-
-                            <p class="small text-secondary"><?= $property['address']; ?></p>
-
-                            <p class="orange-text">₦<?= number_format($property['price']); ?></p>
-
-                        </div>
-                        <div class="card-footer bg-white">
-                            <p class="text-secondary"><?= $property['beds']; ?> Beds  <?= $property['baths']; ?> Baths</p>
-                            <p class="text-right prop-link"><a href="property-details.php?id=<?= $property['id']; ?>">Explore&nbsp;<i class="fa fa-arrow-right"></i></a></p>
-                        </div>
-                    </div>
+                <div id="sale-target-content" class="row mt-5">
+                 
                 </div>
-                <?php endforeach; ?>
+                <nav style="float: right;padding: 10px;">
+                    <ul class="sale-pagination">
+                    <?php if(!empty($total_pages)):for($i=1; $i<=$total_pages; $i++):  
+                        if($i == 1):?>
+                        <li class='active' id="<?php echo $i;?>"><a href='luxury-sale-pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li> 
+                        <?php else:?>
+                        <li id="<?php echo $i;?>"><a href='luxury-sale-pagination.php?page=<?php echo $i;?>'><?php echo $i;?></a></li>
+                    <?php endif;?>          
+                    <?php endfor; endif;?>
+                    </ul>
+                </nav>
             </div>
         </div>
     </section>
@@ -202,7 +177,71 @@
             </div>
         </div>
     </section>
+    <input type="hidden" id="location" value="<?= $_GET['location'] ?? ''; ?>">
+    <input type="hidden" id="min" value="<?= $_GET['min'] ?? ''; ?>">
+    <input type="hidden" id="max" value="<?= $_GET['max'] ?? ''; ?>">
+    <input type="hidden" id="beds" value="<?= $_GET['beds'] ?? ''; ?>">
+    <input type="hidden" id="baths" value="<?= $_GET['baths'] ?? ''; ?>">
+    <input type="hidden" id="propertyType" value="<?= $_GET['property_type'] ?? ''; ?>">
+    <input type="hidden" id="filter-search" value="<?= $_GET['filter-search'] ?? ''; ?>">
     <!-- Footer -->
     <?php include 'assets/libs/footer.php'; ?>
 </body>
 </html>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var location        = $('#location').val();
+        var min             = $('#min').val();
+        var max             = $('#max').val();
+        var beds            = $('#beds').val();
+        var baths           = $('#baths').val();
+        var propertyType    = $('#propertyType').val();
+        var filter_search   = $('#filter-search').val();
+
+        $('.rent-pagination').pagination({
+            items: <?= $rent_total_pages?>,
+            itemsOnPage: <?= $items; ?>,
+            cssStyle: 'light-theme',
+            currentPage : 1,
+            onPageClick : function(pageNumber) {
+                jQuery("#rent-target-content").html('<img src="assets/images/loader.gif" width="300" height="150" />');
+                if (filter_search == 'full-search') {
+                    jQuery("#rent-target-content").load("luxury-rent-pagination.php?page="+pageNumber+"&location="+location+"&property_type="+propertyType+"&min="+min+"&max="+max+"&beds="+beds+"&baths="+baths+"&filter-search="+filter_search);
+                } else {
+                    jQuery("#rent-target-content").load("luxury-rent-pagination.php?page=" + pageNumber);
+                }
+            },
+            onInit :function() {
+                jQuery("#rent-target-content").html('<img src="assets/images/loader.gif" width="300" height="150" />');
+                if (filter_search == 'full-search') {
+                    jQuery("#rent-target-content").load("luxury-rent-pagination.php?page=1"+"&location="+location+"&property_type="+propertyType+"&min="+min+"&max="+max+"&beds="+beds+"&baths="+baths+"&filter-search="+filter_search);
+                } else {
+                    jQuery("#rent-target-content").load("luxury-rent-pagination.php?page=1");
+                }
+            }
+        });
+
+        $('.sale-pagination').pagination({
+            items: <?= $sale_total_pages?>,
+            itemsOnPage: <?= $items; ?>,
+            cssStyle: 'light-theme',
+            currentPage : 1,
+            onPageClick : function(pageNumber) {
+                jQuery("#sale-target-content").html('<img src="assets/images/loader.gif" width="300" height="150" />');
+                if (filter_search == 'full-search') {
+                    jQuery("#sale-target-content").load("luxury-sale-pagination.php?page="+pageNumber+"&location="+location+"&property_type="+propertyType+"&min="+min+"&max="+max+"&beds="+beds+"&baths="+baths+"&filter-search="+filter_search);
+                } else {
+                    jQuery("#sale-target-content").load("luxury-sale-pagination.php?page=" + pageNumber);
+                }
+            },
+            onInit :function() {
+                jQuery("#sale-target-content").html('<img src="assets/images/loader.gif" width="300" height="150" />');
+                if (filter_search == 'full-search') {
+                    jQuery("#sale-target-content").load("luxury-sale-pagination.php?page=1"+"&location="+location+"&property_type="+propertyType+"&min="+min+"&max="+max+"&beds="+beds+"&baths="+baths+"&filter-search="+filter_search);
+                } else {
+                    jQuery("#sale-target-content").load("luxury-sale-pagination.php?page=1");
+                }
+            }
+        });
+    });
+</script>

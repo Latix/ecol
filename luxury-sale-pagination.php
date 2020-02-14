@@ -7,16 +7,16 @@ if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };
 $start_from = ($page-1) * $limit;  
 
 if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
-    $sql  = "SELECT * FROM property WHERE status='SA' AND ";
+    $sql  = "SELECT * FROM property WHERE status='SA' AND propertyType='CO' AND ";
     $sql .= " location='".$_GET['location']."' ";
     $sql .= " AND propertyType='".$_GET['property_type']."' ";
     $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
     $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
     $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
-    $sql .= " ORDER BY id DESC LIMIT $start_from, $limit ";
+    $sql .= " ORDER BY RAND() LIMIT $start_from, $limit ";
     $rent = $conn->query($sql); 
 } else {
-    $rent = $conn->query("SELECT * FROM property WHERE status='SA' ORDER BY RAND() LIMIT $start_from, $limit"); 
+    $rent = $conn->query("SELECT * FROM property WHERE status='SA' AND propertyType='CO' ORDER BY RAND() LIMIT $start_from, $limit"); 
 }
 foreach ($rent as $property) :
 ?>

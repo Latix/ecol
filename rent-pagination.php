@@ -13,10 +13,10 @@ if (isset($_GET['filter-search']) && $_GET['filter-search'] == 'full-search') {
     $sql .= ($_GET['min'] > 0 AND $_GET['max'] > 0) ? " AND price BETWEEN '".$_GET['min']."' AND '".$_GET['max']."' " : "";
     $sql .= ($_GET['beds'] > 0) ? " AND beds='".$_GET['beds']."' " : "";
     $sql .= ($_GET['baths'] > 0) ? " AND baths='".$_GET['baths']."' " : "";
-    $sql .= " ORDER BY id DESC LIMIT $start_from, $limit ";
+    $sql .= " ORDER BY RAND() LIMIT $start_from, $limit ";
     $rent = $conn->query($sql); 
 } else {
-    $rent = $conn->query("SELECT * FROM property WHERE status='RT' ORDER BY id DESC LIMIT $start_from, $limit"); 
+    $rent = $conn->query("SELECT * FROM property WHERE status='RT' ORDER BY RAND() LIMIT $start_from, $limit"); 
 }
 foreach ($rent as $property) :
 ?>
