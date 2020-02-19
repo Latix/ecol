@@ -111,7 +111,7 @@ checkAccess();
                       ?>
                       <li class="chat-persons">
                         <a href="#">
-                          <span class="pro-pic"><img src="<?= $property['picture1'] ?>" alt=""></span>
+                          <span class="pro-pic"><img style="border-radius: 0;" src="<?= $property['picture1'] ?>" alt=""></span>
                           <div class="user">
                             <p class="u-name"><?= $property['title'] ?> - For <?= $valid_status[$property['status']]; ?></p>
                             <p class="u-designation"><?= $property['description']; ?></p>
@@ -119,8 +119,8 @@ checkAccess();
                           <p class="joined-date"><?= datetimeToText($property['created']); ?></p>
                         </a>
                       </li>
-                      </ul>
                       <?php endforeach; ?>
+                      </ul>
                       <!-- list person -->
                     <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></ul>
                   </div>
