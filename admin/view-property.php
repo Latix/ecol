@@ -42,12 +42,12 @@ checkAccess();
 								        		foreach ($properties as $property) :
 								        	?>
 								            <tr>
-									            <td class="text-center"><img src="<?= $property['picture1']; ?>"></td>
+									            <td class="text-center"><img style="border-radius: 0;" src="<?= $property['picture1']; ?>"></td>
 									            <td class="text-center"><?= $property['title']; ?></td>
 									            <td class="text-center">₦<?= number_format($property['price']); ?></td>
-									            <td class="truncate text-center" data-toggle="tooltip" data-placement="top" title="<?= $property['description']; ?>"><?= $property['description']; ?></td>
-									            <td class="text-center"><label class="badge badge-primary"><?= $valid_property[$property['propertyType']]; ?></label></td>
-									            <td class="text-center"><label class="badge badge-dark"><?= $valid_status[$property['status']]; ?></label></td>
+									            <td class="truncate text-center" data-toggle="tooltip" data-placement="top" title="<?= $property['description']; ?>"><?= custom_echo($property['description'], 50); ?></td>
+									            <td class="text-center"><label class="badge badge-<?= $valid_property_HTML[$property['propertyType']]; ?>"><?= $valid_property[$property['propertyType']]; ?></label></td>
+									            <td class="text-center"><label class="badge badge-<?= $valid_status_HTML[$property['status']]; ?>"><?= $valid_status[$property['status']]; ?></label></td>
 									            <td class="truncate text-center" data-toggle="tooltip" data-placement="top" title="<?= $property['address']; ?>"><?= $property['address']; ?></td>
 									            <td class="text-center">
 									                <a href="edit-property.php?id=<?= $property['id']; ?>"><label class="badge badge-primary" data-toggle="tooltip" data-placement="top" title="Edit Details">Edit</label></a>

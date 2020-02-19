@@ -28,9 +28,22 @@ $valid_property = array(
   'HO' => 'House'
 );
 
+$valid_property_HTML = array(
+  'AP' => 'danger', 
+  'CO' => 'primary', 
+  'CT' => 'dark', 
+  'FL' => 'teal', 
+  'HO' => 'warning'
+);
+
 $valid_status = array(
   'SA' => 'Sale', 
   'RT' => 'Rent'
+);
+
+$valid_status_HTML = array(
+  'SA' => 'teal', 
+  'RT' => 'danger'
 );
 
 $valid_states = array(
